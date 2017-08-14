@@ -1,0 +1,42 @@
+$color: #B83B5E;
+$black: #44403F;
+$font-size: 10px;
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@mixin breakpoint($point) {
+    @if $point==pc {
+        @media only screen and (max-width: 1280px) {
+            @content;
+        }
+    }
+    @else if $point==pad {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point==mobile {
+        @media only screen and (max-width: 425px) {
+            @content;
+        }
+    }
+}
+
+.navbar-toggleable-md {
+	box-shadow: 2px 2px 3px rgba($black, .3);
+	margin-bottom: 50px;
+    .navbar-brand {
+        font-family: 'Indie Flower', cursive;
+    }
+}
+
+.nav-item {
+    .nav-link {
+        color: #44403F;
+        font-size: $font-size*1.6;
+    }
+}
+
+.router-link-active {
+    color: $color!important;
+	border-bottom: 3px solid $color;
+}
